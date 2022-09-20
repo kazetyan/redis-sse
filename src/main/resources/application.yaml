@@ -1,0 +1,9 @@
+spring:
+  redis:
+    host: host
+    port: 0
+    password: pwd
+  application:
+    name: redis-sse
+server:
+  port: 0
