@@ -21,8 +21,8 @@ public class HealthController {
     @Value("${sse.channel:test}")
     private String channel;
 
-    @GetMapping(value = "/subcribe", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<String> subcribe() {
+    @GetMapping(value = "/subscribe", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<String> subscribe() {
         StatefulRedisPubSubConnection<String, String> connection = redisClient.connectPubSub();
         connection.sync().subscribe(channel);
         return Flux.create(sink -> {
